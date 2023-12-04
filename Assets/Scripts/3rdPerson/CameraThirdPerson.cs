@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraThirdPerson : MonoBehaviour {
@@ -10,26 +8,25 @@ public class CameraThirdPerson : MonoBehaviour {
 
     public Transform Player;
 
-    public float distance = 10.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
-    public float HorizontalSensivity = 4.0f;
-    public float Verticalsensivity = 4.0f;
-    public Vector3 Shift ;
-    // Start is called before the first frame update
-    void Start() { }
 
-    // Update is called once per frame
+    [SerializeField]
+    private ThirdPersonConfig _thirdPersonConfig;
+
+
     void LateUpdate() {
-        currentX += Input.GetAxis("Mouse X") * HorizontalSensivity * Time.deltaTime;
-        currentY += Input.GetAxis("Mouse Y") * Verticalsensivity * Time.deltaTime;
+        currentX += Input.GetAxis("Mouse X") * _thirdPersonConfig.HorizontalSensivity * Time.deltaTime;
+        float vertDif = Input.GetAxis("Mouse Y") * _thirdPersonConfig.Verticalsensivity * Time.deltaTime;
+        vertDif *= _thirdPersonConfig.IsInvertedVertical ? 1 : -1;
+        currentY += vertDif;
 
         currentY = Mathf.Clamp(currentY, YMin, YMax);
 
-        Vector3 Direction = new Vector3(0, 0, -distance);
+        Vector3 Direction = new Vector3(0, 0, -_thirdPersonConfig.distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        transform.position = Shift + lookAt.position + rotation * Direction;
+        transform.position = _thirdPersonConfig.Shift + lookAt.position + rotation * Direction;
 
-        transform.LookAt(Shift+ lookAt.position);
+        transform.LookAt(_thirdPersonConfig.Shift + lookAt.position);
     }
 }

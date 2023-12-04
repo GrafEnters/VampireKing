@@ -7,6 +7,9 @@ public class PlayerThirdPerson : MonoBehaviour {
 
     public Transform Cam;
 
+    [SerializeField]
+    private ThirdPersonConfig _thirdPersonConfig;
+
     // Start is called before the first frame update
     void Start() {
         Controller = GetComponent<CharacterController>();
@@ -23,7 +26,7 @@ public class PlayerThirdPerson : MonoBehaviour {
         Controller.Move(Movement);
 
         if (Movement.magnitude != 0f) {
-            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * Cam.GetComponent<CameraThirdPerson>().HorizontalSensivity * Time.deltaTime);
+            transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * _thirdPersonConfig.HorizontalSensivity * Time.deltaTime);
 
             Quaternion CamRotation = Cam.rotation;
             CamRotation.x = 0f;
