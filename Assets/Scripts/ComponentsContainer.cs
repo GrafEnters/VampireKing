@@ -6,7 +6,7 @@ namespace DefaultNamespace {
     public class ComponentsContainer : MonoBehaviour {
         private readonly Dictionary<string, Action> _nameActionDictionary = new Dictionary<string, Action>();
 
-        private void Awake() {
+        protected virtual void Awake() {
             InitComponents();
         }
 

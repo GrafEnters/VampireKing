@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceBase : MonoBehaviour
-{
-   private void OnTriggerEnter(Collider other) {
-      if (other.transform.name == "Player") {
-         
-         Destroy(gameObject);
-      }
-   }
+public class ResourceBase : MonoBehaviour {
+    [SerializeField]
+    private string _resourceName;
+
+    [SerializeField]
+    private int _amount;
+
+    public string ResourceName => _resourceName;
+    public int Amount => _amount;
 }
