@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 1475811553469624850}
   - component: {fileID: 6727166962644566020}
   - component: {fileID: 1741164584291732274}
-  - component: {fileID: 6301131177177936153}
+  - component: {fileID: 521459851874683647}
   m_Layer: 0
   m_Name: Spruce_Tree_V0_LOD0
   m_TagString: Untagged
@@ -299,8 +299,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6301131177177936153
-MeshCollider:
+--- !u!136 &521459851874683647
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -317,10 +317,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6656735265052826640, guid: 615bc3e0fb65d6645b7f2be770b642f3, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.51
+  m_Height: 14.370699
+  m_Direction: 1
+  m_Center: {x: 0, y: 6.67, z: 0}
 --- !u!1 &8225027294381893065
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1475811553469624850}
