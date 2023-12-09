@@ -389,7 +389,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6604932783879724830}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!54 &9037038840656081674
 Rigidbody:
   m_ObjectHideFlags: 0
