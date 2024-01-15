@@ -33,11 +33,11 @@ MonoBehaviour:
     renderingLayerMaskBuffer: 0
     supportWater: 1
     waterSimulationResolution: 128
-    supportWaterExclusion: 1
+    supportWaterExclusion: 0
     supportWaterDeformation: 1
     deformationAtlasSize: 512
     maximumDeformerCount: 64
-    supportWaterFoam: 1
+    supportWaterFoam: 0
     foamAtlasSize: 512
     waterCPUSimulation: 1
     supportComputeThickness: 0
@@ -118,8 +118,8 @@ MonoBehaviour:
     hdShadowInitParams:
       maxShadowRequests: 128
       directionalShadowsDepthBits: 16
-      punctualShadowFilteringQuality: 2
-      directionalShadowFilteringQuality: 2
+      punctualShadowFilteringQuality: 1
+      directionalShadowFilteringQuality: 1
       areaShadowFilteringQuality: 0
       punctualLightShadowAtlas:
         shadowAtlasResolution: 4096
